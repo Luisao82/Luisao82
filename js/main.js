@@ -5,7 +5,7 @@
 import { initTyping } from "./typing.js";
 import { initSkillBars } from "./skills.js";
 import { initContactForm } from "./contact.js";
-import { initPixelDecoration, initScrollGlitch } from "./effects.js";
+import { initScrollGlitch } from "./effects.js";
 import { initEasterEgg } from "./easter-egg.js";
 import { initNav } from "./nav.js";
 
@@ -15,10 +15,10 @@ initNav("navToggle");
 // Efecto de escritura del hero
 initTyping("typing", [
   "Full Stack Developer",
-  "Pixel Art Enthusiast",
   "Code Craftsman",
   "Retro Tech Lover",
   "Problem Solver",
+  "Trianero",
 ]);
 
 // Animación de barras de skills
@@ -28,7 +28,6 @@ initSkillBars(".skills-grid");
 initContactForm("contactForm");
 
 // Efectos visuales
-initPixelDecoration();
 initScrollGlitch();
 
 // Easter egg en consola
