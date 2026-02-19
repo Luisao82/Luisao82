@@ -7,6 +7,10 @@ import { initSkillBars } from "./skills.js";
 import { initContactForm } from "./contact.js";
 import { initPixelDecoration, initScrollGlitch } from "./effects.js";
 import { initEasterEgg } from "./easter-egg.js";
+import { initNav } from "./nav.js";
+
+// Menú hamburguesa responsive
+initNav("navToggle");
 
 // Efecto de escritura del hero
 initTyping("typing", [

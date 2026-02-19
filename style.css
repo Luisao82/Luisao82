@@ -24,9 +24,6 @@ body {
   background-color: var(--dark-bg);
   color: var(--neon-green);
   overflow-x: hidden;
-  cursor:
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="%2339ff14"/></svg>'),
-    auto;
 }
 
 /* CRT Effect */
@@ -127,6 +124,40 @@ nav a:hover {
   color: var(--neon-cyan);
   text-shadow: 0 0 20px var(--neon-cyan);
   background: rgba(0, 255, 255, 0.1);
+}
+
+/* Hamburger button - hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--neon-green);
+  transition: all 0.3s;
+  box-shadow: 0 0 8px var(--neon-green);
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
 }
 
 /* Hero Section */
@@ -790,15 +821,45 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px) {
+  /* Mobile nav */
+  nav {
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
   nav ul {
-    gap: 15px;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    padding-top: 15px;
+  }
+
+  nav ul.nav-open {
+    display: flex;
+  }
+
+  nav li {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(57, 255, 20, 0.2);
   }
 
   nav a {
-    font-size: 8px;
-    padding: 8px 12px;
+    display: block;
+    font-size: 10px;
+    padding: 15px 20px;
+    width: 100%;
   }
 
+  /* Other mobile adjustments */
   .hero h1 {
     font-size: 20px;
   }
